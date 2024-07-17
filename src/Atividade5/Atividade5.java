@@ -1,5 +1,5 @@
 package Atividade5;
-import javax.print.attribute.HashPrintJobAttributeSet;
+
 import java.util.Scanner;
 
 public class Atividade5 {
@@ -7,13 +7,13 @@ public class Atividade5 {
 
         Scanner sc = new Scanner(System.in);
 
-        String NomeTrabalhador;
+        String nomeTrabalhador;
         float horasTrabalhadas;
         float numeroDependentes;
 
 
         System.out.println("Nome Funcionario: ");
-        NomeTrabalhador = sc.nextLine();
+        nomeTrabalhador = sc.nextLine();
 
         System.out.println("Horas Trabalhadas: ");
         horasTrabalhadas = sc.nextFloat();
@@ -21,19 +21,17 @@ public class Atividade5 {
         System.out.println("Numero de dependentes: ");
         numeroDependentes = sc.nextFloat();
 
-        double horasFinal, dependentesFinal, salarioBruto, salarioPreLiquido, salarioLiquido;
+        double horasFinal, dependentesFinal, salario;
 
          horasFinal = horasTrabalhadas * 3.00;
          dependentesFinal = numeroDependentes * 100.00;
+        salario = (horasFinal + dependentesFinal);
 
-         salarioBruto = horasFinal + dependentesFinal;
+        salario -= salario * 0.135;
 
-         salarioPreLiquido = salarioBruto * 0.135;
 
-         salarioLiquido = salarioBruto - salarioPreLiquido;
-
-        System.out.println( NomeTrabalhador );
-        System.out.println( "Salario Liquido: " +salarioLiquido);
+        System.out.println( "Trabalhador: " + nomeTrabalhador );
+        System.out.println( "Salario Liquido: " + salario);
 
     }
 }
